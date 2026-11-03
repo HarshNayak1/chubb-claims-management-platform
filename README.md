@@ -28,38 +28,38 @@ An enterprise insurance claims management application inspired by **Chubb APAC**
 All accounts are automatically seeded into the database on application startup if they do not already exist (no duplicate records on restarts).
 
 ### User / Policyholder Accounts (10 Users)
-| Email | Password | Role | Permissions |
-|---|---|---|---|
-| `user01@chubb.com` | `User@123` | `USER` | File claims, view personal claims, track claim audit history |
-| `user02@chubb.com` | `User@123` | `USER` | File claims, view personal claims, track claim audit history |
-| `user03@chubb.com` | `User@123` | `USER` | File claims, view personal claims, track claim audit history |
-| `user04@chubb.com` | `User@123` | `USER` | File claims, view personal claims, track claim audit history |
-| `user05@chubb.com` | `User@123` | `USER` | File claims, view personal claims, track claim audit history |
-| `user06@chubb.com` | `User@123` | `USER` | File claims, view personal claims, track claim audit history |
-| `user07@chubb.com` | `User@123` | `USER` | File claims, view personal claims, track claim audit history |
-| `user08@chubb.com` | `User@123` | `USER` | File claims, view personal claims, track claim audit history |
-| `user09@chubb.com` | `User@123` | `USER` | File claims, view personal claims, track claim audit history |
-| `user10@chubb.com` | `User@123` | `USER` | File claims, view personal claims, track claim audit history |
+| Email |  Role | Permissions |
+|---|---|---|
+| `user01@chubb.com` |  `USER` | File claims, view personal claims, track claim audit history |
+| `user02@chubb.com` |  `USER` | File claims, view personal claims, track claim audit history |
+| `user03@chubb.com` |  `USER` | File claims, view personal claims, track claim audit history |
+| `user04@chubb.com` |  `USER` | File claims, view personal claims, track claim audit history |
+| `user05@chubb.com` |  `USER` | File claims, view personal claims, track claim audit history |
+| `user06@chubb.com` |  `USER` | File claims, view personal claims, track claim audit history |
+| `user07@chubb.com` |  `USER` | File claims, view personal claims, track claim audit history |
+| `user08@chubb.com` |  `USER` | File claims, view personal claims, track claim audit history |
+| `user09@chubb.com` |  `USER` | File claims, view personal claims, track claim audit history |
+| `user10@chubb.com` |  `USER` | File claims, view personal claims, track claim audit history |
 
 ### Claims Assessor / Employee Accounts (10 Employees)
-| Email | Password | Role | Permissions |
-|---|---|---|---|
-| `employee01@chubb.com` | `Employee@123` | `EMPLOYEE` | View claims queue, search, filter, update status with audit log |
-| `employee02@chubb.com` | `Employee@123` | `EMPLOYEE` | View claims queue, search, filter, update status with audit log |
-| `employee03@chubb.com` | `Employee@123` | `EMPLOYEE` | View claims queue, search, filter, update status with audit log |
-| `employee04@chubb.com` | `Employee@123` | `EMPLOYEE` | View claims queue, search, filter, update status with audit log |
-| `employee05@chubb.com` | `Employee@123` | `EMPLOYEE` | View claims queue, search, filter, update status with audit log |
-| `employee06@chubb.com` | `Employee@123` | `EMPLOYEE` | View claims queue, search, filter, update status with audit log |
-| `employee07@chubb.com` | `Employee@123` | `EMPLOYEE` | View claims queue, search, filter, update status with audit log |
-| `employee08@chubb.com` | `Employee@123` | `EMPLOYEE` | View claims queue, search, filter, update status with audit log |
-| `employee09@chubb.com` | `Employee@123` | `EMPLOYEE` | View claims queue, search, filter, update status with audit log |
-| `employee10@chubb.com` | `Employee@123` | `EMPLOYEE` | View claims queue, search, filter, update status with audit log |
+| Email |  Role | Permissions |
+|---|---|---|
+| `employee01@chubb.com` |  `EMPLOYEE` | View claims queue, search, filter, update status with audit log |
+| `employee02@chubb.com` |  `EMPLOYEE` | View claims queue, search, filter, update status with audit log |
+| `employee03@chubb.com` |  `EMPLOYEE` | View claims queue, search, filter, update status with audit log |
+| `employee04@chubb.com` |  `EMPLOYEE` | View claims queue, search, filter, update status with audit log |
+| `employee05@chubb.com` |  `EMPLOYEE` | View claims queue, search, filter, update status with audit log |
+| `employee06@chubb.com` |  `EMPLOYEE` | View claims queue, search, filter, update status with audit log |
+| `employee07@chubb.com` |  `EMPLOYEE` | View claims queue, search, filter, update status with audit log |
+| `employee08@chubb.com` |  `EMPLOYEE` | View claims queue, search, filter, update status with audit log |
+| `employee09@chubb.com` |  `EMPLOYEE` | View claims queue, search, filter, update status with audit log |
+| `employee10@chubb.com` |  `EMPLOYEE` | View claims queue, search, filter, update status with audit log |
 
 ### Executive / Manager Accounts (2 Managers)
-| Email | Password | Role | Permissions |
-|---|---|---|---|
-| `manager01@chubb.com` | `Manager@123` | `MANAGER` | Real database metrics dashboard, view all claims, view users & employees (read-only) |
-| `manager02@chubb.com` | `Manager@123` | `MANAGER` | Real database metrics dashboard, view all claims, view users & employees (read-only) |
+| Email | Role | Permissions |
+|---|---|---|
+| `manager01@chubb.com` |  `MANAGER` | Real database metrics dashboard, view all claims, view users & employees (read-only) |
+| `manager02@chubb.com` |  `MANAGER` | Real database metrics dashboard, view all claims, view users & employees (read-only) |
 
 > **Convenience Feature:** The login screen contains 1-click **Fast Test Credentials** buttons to instantly fill User, Employee, or Manager credentials.
 
@@ -71,21 +71,61 @@ All accounts are automatically seeded into the database on application startup i
 - **JDK 17** installed (`java -version`)
 - **Node.js** (v18+) and npm (`npm -v`)
 
+## How to Run the Application
+
 ### Step 1: Start Backend (Spring Boot)
-Open a terminal in the project directory:
+
+Open a terminal in the project root directory.
+
+**Option 1: Run directly using Maven**
+
 ```bash
 cd backend
-./mvnw clean spring-boot:run
+mvn clean spring-boot:run
 ```
-*The Spring Boot server will initialize H2 and listen on `http://localhost:8080`.*
+
+**Option 2: Build and run using the executable JAR**
+
+```bash
+cd backend
+mvn clean install
+java -jar target/claimsmanagementapplication-0.0.1-SNAPSHOT.jar
+```
+
+The Spring Boot server will start at **http://localhost:8080** and initialize the H2 in-memory database.
 
 ### Step 2: Start Frontend (Angular)
-Open a second terminal in the project directory:
+
+Open a **second terminal** in the project root directory.
+
+**Option 1: Run using npm**
+
 ```bash
 cd frontend
+npm install
 npm start
 ```
-*The Angular development server will start and be available at `http://localhost:4200`.*
+
+**Option 2: Run using Angular CLI**
+
+```bash
+cd frontend
+npm install
+ng serve
+```
+
+The Angular development server will start at **http://localhost:4200**.
+
+### Step 3: Access the Application
+
+Open your browser and navigate to:
+
+**http://localhost:4200**
+
+**Note:**
+- Keep both backend and frontend terminals running while using the application.
+- If you are already inside the `backend` directory and want to start the frontend in the same terminal, run `cd ..` first, followed by `cd frontend`.
+- Run `npm install` only the first time or whenever dependencies change.
 
 ### Accessing the Web Application
 Open your browser and navigate to:
