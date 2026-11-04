@@ -77,6 +77,12 @@ All accounts are automatically seeded into the database on application startup i
 
 Open a terminal in the project root directory.
 
+**Step 1: Clone the project**
+
+```bash
+git clone https://github.com/HarshNayak1/chubb-claims-management-platform.git
+```
+
 **Option 1: Run directly using Maven**
 
 ```bash
