@@ -116,6 +116,56 @@ ng serve
 
 The Angular development server will start at **http://localhost:4200**.
 
+## Run Application Using Docker
+
+### Prerequisites
+
+- Install Docker on your system.
+- Open Docker Desktop and make sure it is running.
+- Internet connection to download Docker images.
+
+### Steps to Run
+
+**Step 1: Clone the project**
+
+```bash
+git clone https://github.com/HarshNayak1/chubb-claims-management-platform.git
+```
+
+**Step 2: Go to the project folder**
+
+```bash
+cd chubb-claims-management-platform
+```
+
+**Note:** Make sure you are in the project root folder where `docker-compose.yml` is present.
+
+**Step 3: Start the application**
+
+```bash
+docker compose up -d
+```
+
+This command will automatically download the public backend and frontend images from Docker Hub and start both containers.
+
+**Step 4: Open the application**
+
+Open your browser and visit:
+
+- Frontend: http://localhost:4200
+
+**Step 5: Check running containers**
+
+```bash
+docker compose ps
+```
+
+**Step 6: Stop the application**
+
+```bash
+docker compose down
+```
+
 ### Step 3: Access the Application
 
 Open your browser and navigate to:
