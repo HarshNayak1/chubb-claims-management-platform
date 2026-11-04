@@ -1,0 +1,14 @@
+services:
+  backend:
+    image: harshnayak1/chubb-claims-backend:v1
+    container_name: chubb-claims-backend
+    ports:
+      - "8080:8080"
+
+  frontend:
+    image: harshnayak1/chubb-claims-frontend:v1
+    container_name: chubb-claims-frontend
+    ports:
+      - "4200:80"
+    depends_on:
+      - backend
